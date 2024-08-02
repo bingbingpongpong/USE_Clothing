@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Shirt App</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Shirt App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="/size">Size Guide</a>
+          </li>
+          <a class="nav-link" href="/addshirt">Add new shirt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history">History</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <br>
+    <div class="text-center">
+      <h2>Shirt Details</h2>
+    </div>
+    <br>
+    <% if (shirt) { %>
+      <div>
+        <p><b>Shirt Name:</b><br>
+          <%= shirt.shirtName %>
+        </p>
+        <p><b>Shirt Image:</b><br> <img src="/images/<%= shirt.image %>" width="40%"></p>
+        <p><b>Price:</b><br> $<%= shirt.price %>
+        </p>
+        <p><b>Size:</b><br>
+          <%= shirt.size %>
+        </p>
+      </div>
+      <% } else { %>
+        <p>No shirt found.</p>
+        <% } %>
+          <a href="/">Back</a>
+  </div>
+
+</body>
+
+</html>
